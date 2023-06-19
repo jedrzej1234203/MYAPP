@@ -33,7 +33,9 @@ export class LoginpageComponent {
       this.handlingError = 'basic red'
       this.flag = false;
     }
+    if(this.aS.isLoggedIn){
     this.router.navigate(['flightres'])
+    }
   }
 
   
