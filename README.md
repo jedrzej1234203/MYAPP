@@ -1,27 +1,35 @@
-# Airlines
+# airlines booking ticket app
+## About this project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.1.
+This project was created for purpose of learning Angular and final project for post graduate studies.
+## Technologies
 
-## Development server
+List of technologies used:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Angular 16
+- RxJs
+- Semantic Ui library
 
-## Code scaffolding
+## Overwiew
+If you wish to check how it works it is available online at Github Pages <a href="https://jedrzej1234203.github.io/MYAPP">HERE</a>.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Launch
+To launch this project by yourself:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- clone repository
+- use below command to install necessary node modules
+```
+npm install
+```
+- change 'OutPath' from 'docs' to 'disc/nameOfProject' in angular.json file
+- change base href in index.html
+- rebuild project using command 
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```
+ng build
+```
+- serve project using
+```
+ng serve
+```
