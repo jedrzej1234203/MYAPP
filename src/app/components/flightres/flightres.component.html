@@ -1,0 +1,36 @@
+<div class="ui center big aligned header" style="color:aliceblue">
+  Wyszukiwarka Lotów
+</div>
+<div class="ui segment">
+  <div class="ui message ">
+    <div class="header">Wybierz czas i miejsce</div>
+    </div>
+    <form class="ui large form" [formGroup]="rezerwacja">
+      <div class="fields">
+        <div class="field">
+          <label>Miejsce Wylotu</label>
+          <select class="ui dropdown" name="" id="" formControlName="miastoStartu">
+            <option value="Berlin">Berlin</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="">Miejsce Docelowe</label>
+          <select formControlName="miastoDocelowe" name="" id="" >
+            <option value="Krakow">Kraków</option>
+            <option value="Tokyo">Tokyo</option>
+            <option value="Glasgow">Glasgow</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Data Wylotu:</label>
+          <input #inp type="date" formControlName="data" />
+        </div>
+        <div class="field">
+          <label>Ilość Pasażerów:</label>
+          <input type="number" min="1" formControlName="iloscPasazerow" />
+        </div>
+      </div>
+      <button [disabled]="canActivate()"  (click)="navigateFun('rezerwacja')" class="ui primary button">Wybierz</button>
+      <button class="ui primary button" *ngIf="canActivate()" (click)="loginNav()">Log-in</button>
+    </form>
+  </div>

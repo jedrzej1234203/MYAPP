@@ -1,0 +1,24 @@
+<div class="ui card">
+  <form class="ui form card" [formGroup]="loginForm">
+    <div *ngIf="flag" class="ui blue ribbon label">Logowanie</div>
+    <div *ngIf="!flag" class="ui red ribbon label">Zły Login lub Hasło</div>
+    <div class="field">
+      <input
+        class="ui input"
+        type="email"
+        formControlName="email"
+        placeholder="twoj@adres.email"
+        [ngClass]="{ error: true }"
+      />
+      <label class="ui pointing label" [ngClass]="handlingError"> Login: </label>
+    </div>
+    <div class="field">
+      <label class="ui pointing below label" [ngClass]="handlingError">Hasło:</label>
+
+      <input type="password" placeholder="hasło" formControlName="password" />
+    </div>
+    <button class="fluid ui button primary" [disabled]="!loginForm.valid"  (click)="loginBtn()">
+      Logowanie
+    </button>
+  </form>
+</div>

@@ -1,0 +1,21 @@
+<div class="ui two cards">
+  <div
+    *ngFor="let pasazer of podsumowanie; let i = index"
+    class="ui card"
+    style="min-width: 100px"
+  >
+    <div class="content">
+      <div class="header">{{i+1}}.LOT: Berlin - {{ pasazer.trasa }}</div>
+      <div class="meta">Data: {{ pasazer.data }}</div>
+      <div class="description">
+        <p>Miejsce: {{ seats[i] }}</p>
+        <p *ngIf="!bagaze[i]">Tylko bagaż podręczny.</p>
+        <p *ngIf="bagaze[i]">Bagaż podręczny i rejestrowany</p>
+      </div>
+      <div class="extra content description">
+        <i class="check icon"></i>
+        {{ bagaze[i] ? pasazer.kwota + 120 : pasazer.kwota | waluty }} 
+      </div>
+    </div>
+  </div>
+</div>

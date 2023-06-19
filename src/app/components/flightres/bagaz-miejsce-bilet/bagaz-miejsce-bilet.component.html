@@ -1,0 +1,184 @@
+<div class="ui center big aligned header" style="color: aliceblue">
+  {{ daneLotu.start }} - {{ daneLotu.cel }}
+  {{ daneLotu.data | date : "shortDate" }}
+</div>
+<div class="ui centered grid">
+  <div class="ui segment">
+    <div class="column">
+      <div class="ui segment">
+        <div class="ui toggle checkbox">
+          <input (click)="choseSeat()" type="checkbox" />
+          <label>Wybór Miejsca (+ {{ cennik.miejsce | waluty }} )</label>
+        </div>
+        <div
+          *ngIf="plane"
+          class="ui center aligned grid"
+          style="max-width: 410px"
+        >
+          <div class="row"></div>
+          <div class="row">
+            <div class="column">
+              <button id="1A" (click)="takeSeat('1A')" class="ui icon button">
+                1A
+              </button>
+            </div>
+
+            <div class="column">
+              <button id="1B" (click)="takeSeat('1B')" class="ui icon button">
+                1B
+              </button>
+            </div>
+            <div class="column"></div>
+            <div class="column">
+              <button id="1C" (click)="takeSeat('1C')" class="ui icon button">
+                1C
+              </button>
+            </div>
+
+            <div class="column">
+              <button id="1D" (click)="takeSeat('1D')" class="ui icon button">
+                1D
+              </button>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="column">
+              <button id="2A" (click)="takeSeat('2A')" class="ui icon button">
+                2A
+              </button>
+            </div>
+            <div class="column">
+              <button id="2B" (click)="takeSeat('2B')" class="ui icon button">
+                2B
+              </button>
+            </div>
+            <div class="column"></div>
+            <div class="column">
+              <button id="2C" (click)="takeSeat('2C')" class="ui icon button">
+                2C
+              </button>
+            </div>
+            <div class="column">
+              <button id="2D" (click)="takeSeat('2D')" class="ui icon button">
+                2D
+              </button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column">
+              <button id="3A" (click)="takeSeat('3A')" class="ui icon button">
+                3A
+              </button>
+            </div>
+            <div class="column">
+              <button id="3B" (click)="takeSeat('3B')" class="ui icon button">
+                3B
+              </button>
+            </div>
+            <div class="column"></div>
+            <div class="column">
+              <button id="3C" (click)="takeSeat('3C')" class="ui icon button">
+                3C
+              </button>
+            </div>
+            <div class="column">
+              <button id="3D" (click)="takeSeat('3D')" class="ui icon button">
+                3D
+              </button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column">
+              <button id="4A" (click)="takeSeat('4A')" class="ui icon button">
+                3A
+              </button>
+            </div>
+            <div class="column">
+              <button id="4B" (click)="takeSeat('4B')" class="ui icon button">
+                3B
+              </button>
+            </div>
+            <div class="column"></div>
+            <div class="column">
+              <button id="4C" (click)="takeSeat('4C')" class="ui icon button">
+                3C
+              </button>
+            </div>
+            <div class="column">
+              <button class="ui icon button">3D</button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column">
+              <button id="5A" (click)="takeSeat('5A')" class="ui icon button">
+                3A
+              </button>
+            </div>
+            <div class="column">
+              <button id="5B" (click)="takeSeat('5B')" class="ui icon button">
+                3B
+              </button>
+            </div>
+            <div class="column"></div>
+            <div class="column">
+              <button id="5C" (click)="takeSeat('5C')" class="ui icon button">
+                3C
+              </button>
+            </div>
+            <div class="column">
+              <button id="5D" (click)="takeSeat('5D')" class="ui icon button">
+                3D
+              </button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column">
+              <button id="6A" (click)="takeSeat('6A')" class="ui icon button">
+                3A
+              </button>
+            </div>
+            <div class="column">
+              <button id="6B" (click)="takeSeat('6B')" class="ui icon button">
+                3B
+              </button>
+            </div>
+            <div class="column"></div>
+            <div class="column">
+              <button id="6C" (click)="takeSeat('6C')" class="ui icon button">
+                3C
+              </button>
+            </div>
+            <div class="column">
+              <button id="6D" (click)="takeSeat('6D')" class="ui icon button">
+                3D
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="ui segment">
+        <div *ngFor="let pasazer of pasazerowie; let i = index">
+          Pasażer {{ i + 1 }}
+          <div class="ui slider checkbox">
+            <input (click)="dodajBagaz(i)" type="checkbox" />
+            <label>Bagaż Rejestrowany (+ {{ cennik.bagaz | waluty }} )</label>
+          </div>
+          <div>
+            Bilet:
+            {{ sharing.cennik[this.wycenaBiletu(this.daneLotu.cel)] | waluty }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <button (click)="sumUp()" class="ui primary button centered">
+        PRZEJDŹ DO PODSUMOWANIA
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="ui middle aligned one column centered grid">
+<div class="row">
+    <div class="ui card">
+      <div class="ui header">  {{ aktualnaGodzina | date: 'fullDate' }}</div>
+              <div class="ui header">{{ aktualnaGodzina | date : "mediumTime" }}</div>
+
+      <h4 class="ui large header">POGODA</h4>
+      <div><i class="sun icon huge yellow"></i></div>
+      <div class="content">
+        <div class="description">
+          Strefa Czasowa: {{ weatherData.timezone }}
+        </div>
+        <div class="description">Lokalizacja: Berlin</div>
+        <div class="description">Max. Temp: {{ weatherData.maxTemp }} °C</div>
+        <div class="description">Min. Temp: {{ weatherData.minTemp }} °C</div>
+        <div class="description">
+          Wschód Słońca: {{ weatherData.sunrise | date : "shortTime" }}
+        </div>
+        <div class="description">
+          Zachód Słońca: {{ weatherData.sunset | date : "shortTime" }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
